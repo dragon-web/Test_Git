@@ -138,16 +138,16 @@ void printlist(node_t *head){
 }
 bool insert(node_t *head, int X){
   int error_code;
-  node_t *new = (node_t*)malloc(sizeof(node_t)); 
-  if(new == NULL){ //Fail to insert
+  node_t *New = (node_t*)malloc(sizeof(node_t)); 
+  if(New == NULL){ //Fail to insert
     error_code = 0;
     pererror_function(error_code);
     return false;
   }
   else {
-    new->next = head->next;
-    head->next = new;
-    new->val = X;
+    New->next = head->next;
+    head->next = New;
+    New->val = X;
   }
   return true;
 }

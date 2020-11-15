@@ -11,7 +11,7 @@ int main(){
   Stack = (node_t*)malloc(sizeof(node_t));
   for(i = 2; i < 12; i++)
     Push(Stack,i);
-  
+
   Push(Stack,100);
   Push(Stack,200);
 
@@ -22,7 +22,7 @@ int main(){
   printf("%d ",Pop(Stack));
   printf("%d ",Pop(Stack));
 
- 
+
   return 0;
 }
 
