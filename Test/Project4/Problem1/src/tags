@@ -1,0 +1,22 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AdjustDown	problem1.c	/^void AdjustDown(int *ar, int left, int right, int start)$/;"	f
+MAX_MAIN	main.c	6;"	d	file:
+QuickSort	problem1.c	/^void QuickSort(int array[], int low, int high) {$/;"	f
+SELECTION_SORT	main.c	9;"	d	file:
+Swap	problem1.c	/^void Swap(int *num1, int *num2)$/;"	f
+TestDaset	problem1.c	/^void TestDaset(int *arr)$/;"	f
+bubble_prj4	problem1.c	/^int *bubble_prj4(FILE *fp_in) {$/;"	f
+heap_prj4	problem1.c	/^int *heap_prj4(FILE *fp_in) {$/;"	f
+insertion_prj4	problem1.c	/^int* insertion_prj4(FILE *fp_in)$/;"	f
+main	main.c	/^int main()$/;"	f
+merge	problem1.c	/^void merge(int *dataset, int left, int mid, int right) {$/;"	f
+mergeSort	problem1.c	/^void mergeSort(int arr[], int start, int end) {$/;"	f
+merge_prj4	problem1.c	/^int *merge_prj4(FILE *fp_in) {$/;"	f
+partition	problem1.c	/^int partition(int *dataset, int left, int right)$/;"	f
+quick_prj4	problem1.c	/^int *quick_prj4(FILE *fp_in) {$/;"	f
+selection_prj4	problem1.c	/^int *selection_prj4(FILE *fp_in) {$/;"	f

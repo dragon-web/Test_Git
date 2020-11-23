@@ -25,14 +25,10 @@ int *bubble_prj4(FILE *fp_in) {
         int temp = dataset[j];
         dataset[j] = dataset[j + 1];
         dataset[j + 1] = temp;
-
       }
-
     }
-
   }
   return dataset;
-
 }
 
 int *selection_prj4(FILE *fp_in) {
@@ -40,29 +36,23 @@ int *selection_prj4(FILE *fp_in) {
   if (dataset == NULL) {
     printf("Mem alloc fail\n");
     return NULL;
-
   }
   fread(dataset, sizeof(int), SIZE, fp_in);
   int i = 0;
   int j = 0;
-  for (i = 0; i < SIZE; ++i)
+  for (i = 0; i < SIZE - 1; ++i)
   {
+    int min = i;
     for (j = i + 1; j < SIZE; ++j)
     {
-
-      if (dataset[i] > dataset[j])
+      if (dataset[min] > dataset[j])
       {
-        int temp = dataset[i];
-        dataset[i] = dataset[j];
-        dataset[j] = temp;
-
+        min = j;
       }
-
+      Swap(&dataset[i], &dataset[min]);
     }
-    return dataset;
-
   }
-
+  return dataset;
 }
 
 int* insertion_prj4(FILE *fp_in)
@@ -82,13 +72,10 @@ int* insertion_prj4(FILE *fp_in)
     while (j > 0 && temp < dataset[j - 1]) {
       dataset[j] = dataset[j - 1];
       j--;
-
     }
     dataset[j] = temp;
-
   }
   return dataset;
-
 }
 
 void AdjustDown(int *ar, int left, int right, int start)
@@ -109,9 +96,7 @@ void AdjustDown(int *ar, int left, int right, int start)
     }
     else
       break;
-
   }
-
 }
 
 int *heap_prj4(FILE *fp_in) {
@@ -131,7 +116,6 @@ int *heap_prj4(FILE *fp_in) {
   {
     AdjustDown(dataset, left, right, cur);
     cur--;
-
   }
   int end = right;
   while (end > right)
@@ -212,6 +196,17 @@ void merge(int *dataset, int left, int mid, int right) {
 }
 
 
+void QuickSort(int array[], int low, int high) {
+  if (low < high) {
+    //divide index 
+    int standard = partition(array, low, high);//Recursive Sort
+    //        //Sort left
+    QuickSort(array, low, standard - 1);
+    //                //Sort right
+    QuickSort(array, standard + 1, high);
+    //                      
+  }
+}
 
 int *quick_prj4(FILE *fp_in) {
   int *dataset = (int*)malloc(sizeof(int)*SIZE);
@@ -225,24 +220,7 @@ int *quick_prj4(FILE *fp_in) {
   int right = SIZE - 1;
   QuickSort(dataset, left, right);
   return dataset;
-
 }
-
-
-void QuickSort(int array[], int low, int high) {
-  if (low < high) {
-    //divide index 
-    //    int standard = partition(array, low, high);//Recursive Sort
-    //        //        //Sort left
-    //            QuickSort(array, low, standard - 1);
-    //                //                //Sort right
-    //                    QuickSort(array, standard + 1, high);
-    //                      
-  }
-
-
-}
-
 
 int partition(int *dataset, int left, int right)
 {
@@ -254,14 +232,10 @@ int partition(int *dataset, int left, int right)
     }
 
     if (left < right) {
-      dataset[left] = dataset[right];  //When a smaller value than array[i] is found, the following value array[j] is assigned to it
-
-
+      dataset[left] = dataset[right];  //When a smaller value than array[i] is found, the following value array[j] is assigned to it 
     }
     while (left < right && dataset[left] <= key) {
       left++;
-
-
     }
     if (left < right) {
       dataset[right] = dataset[left];  //When a larger value than array[j] is found, the previous value array[i] is assigned to it 
@@ -271,6 +245,5 @@ int partition(int *dataset, int left, int right)
   }
   dataset[left] = key;
   return left;
-
 }
 

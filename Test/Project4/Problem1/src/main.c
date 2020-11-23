@@ -6,9 +6,9 @@
 #define MAX_MAIN 30000
 
 //#define BUBBLE_SORT
-#define SELECTION_SORT
+//#define SELECTION_SORT
 //#define INSERTION_SORT
-//#define HEAP_SORT
+#define HEAP_SORT
 //#define MERGE_SORT
 //#define QUICK_SORT
 
@@ -23,7 +23,10 @@ int main()
   
   #ifdef BUBBLE_SORT
   fp = fopen("./dataset/dataset1.txt","rt");
+  clock_t start = clock();
   base = bubble_prj4(fp);
+  clock_t end = clock();
+  printf("Time is %d ms\n",end - start);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification Bubble Pass dataset : dataset1\n");
   else{
@@ -31,16 +34,21 @@ int main()
     exit(1);
   }
   fp = fopen("./dataset/dataset2.txt","rt");
+  clock_t start1 = clock();
   base = bubble_prj4(fp);
+  clock_t end1 = clock();
+  printf("Time is %d ms\n",end1 - start1);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification Bubble Pass dataset : dataset2\n");
   else{
     printf("Verification fail\n");
     exit(1);
   }
-
   fp = fopen("./dataset/dataset3.txt","rt");
+  clock_t start2 = clock();
   base = bubble_prj4(fp);
+  clock_t end2 = clock();
+  printf("Time is %d ms\n",end2 - start2);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification Bubble Pass dataset : dataset3\n");
   else{
@@ -49,9 +57,13 @@ int main()
   }
   #endif
   
-  #ifdef SELECTION_SORT
+  #ifdef SELECTION_SORT 
   fp = fopen("./dataset/dataset1.txt","rt");
+  clock_t start = clock();
   base = selection_prj4(fp);
+  clock_t end = clock();
+
+  printf("time is %d ms\n",end - start);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification Selection Pass dataset : dataset1\n");
   else{
@@ -60,16 +72,21 @@ int main()
   }
 
   fp = fopen("./dataset/dataset2.txt","rt");
+  clock_t start1 = clock();
   base = selection_prj4(fp);
+  clock_t end1 = clock();
+  printf("time is %d ms\n",end1 - start1);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification Selection Pass dataset : dataset2\n");
   else{
     printf("Verification fail\n");
     exit(1);
   }
-
   fp = fopen("./dataset/dataset3.txt","rt");
+  clock_t start2 = clock();
   base = selection_prj4(fp);
+  clock_t end2 = clock();
+  printf("time is %d ms\n",end2 - start2);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification Selection Pass dataset : dataset3\n");
   else{
@@ -80,7 +97,10 @@ int main()
 
   #ifdef INSERTION_SORT
   fp = fopen("./dataset/dataset1.txt","rt");
+  clock_t start = clock();
   base = insertion_prj4(fp);
+  clock_t end = clock();
+  printf("Time is %d ms\n",end - start);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification Insertion Pass dataset : dataset1\n");
   else{
@@ -89,7 +109,10 @@ int main()
   }
 
   fp = fopen("./dataset/dataset2.txt","rt");
+  clock_t start1 = clock();
   base = insertion_prj4(fp);
+  clock_t end1 = clock();
+  printf("Time is %d ms\n",end1 - start1);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification Insertion Pass dataset : dataset2\n");
   else{
@@ -98,7 +121,10 @@ int main()
   }
 
   fp = fopen("./dataset/dataset3.txt","rt");
+  clock_t start2 = clock();
   base = insertion_prj4(fp);
+  clock_t end2 = clock();
+  printf("Time is %d ms\n",end2 - start2);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification Insertion Pass dataset : dataset3\n");
   else{
