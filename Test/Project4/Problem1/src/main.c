@@ -135,7 +135,10 @@ int main()
 
   #ifdef HEAP_SORT
   fp = fopen("./dataset/dataset1.txt","rt");
+  clock_t start = clock();
   base = heap_prj4(fp);
+  clock_t end = clock();
+  printf("Time is %d ms\n",end - start);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification heap Pass dataset : dataset1\n");
   else{
@@ -144,7 +147,10 @@ int main()
   }
 
   fp = fopen("./dataset/dataset2.txt","rt");
+  clock_t start1 = clock();
   base = heap_prj4(fp);
+  clock_t end1 = clock();
+  printf("Time is %dms\n",end1 - start1);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification heap Pass dataset : dataset2\n");
   else{
@@ -153,7 +159,10 @@ int main()
   }
 
   fp = fopen("./dataset/dataset3.txt","rt");
+  clock_t start2 = clock();
   base = heap_prj4(fp);
+  clock_t end2 = clock();
+  printf("Time is %dms\n",end2 - start2);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification heap Pass dataset : dataset3\n");
   else{
@@ -164,7 +173,10 @@ int main()
 
   #ifdef MERGE_SORT
   fp = fopen("./dataset/dataset1.txt","rt");
+  clock_t start = clock();
   base = merge_prj4(fp);
+  clock_t end = clock();
+  printf("Time is %d ms\n",end - start);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification merge Pass dataset : dataset1\n");
   else{
@@ -173,7 +185,10 @@ int main()
   }
 
   fp = fopen("./dataset/dataset2.txt","rt");
+  clock_t start1 = clock();
   base = merge_prj4(fp);
+  clock_t end1 = clock();
+  printf("Time is %d ms\n",end1 - start1);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification merge Pass dataset : dataset2\n");
   else{
@@ -182,7 +197,10 @@ int main()
   }
 
   fp = fopen("./dataset/dataset3.txt","rt");
+  clock_t start2 = clock();
   base = merge_prj4(fp);
+  clock_t end2 = clock();
+  printf("Time is %d ms\n",end2 - start2);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification merge Pass dataset : dataset3\n");
   else{
@@ -194,7 +212,10 @@ int main()
   #ifdef QUICK_SORT
 
   fp = fopen("./dataset/dataset1.txt","rt");
+  clock_t start = clock();
   base = quick_prj4(fp);
+  clock_t end = clock();
+  printf("Time is %d ms\n",end - start);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification quick Pass dataset : dataset1\n");
   else{
@@ -203,7 +224,10 @@ int main()
   }
 
   fp = fopen("./dataset/dataset2.txt","rt");
+  clock_t start1 = clock();
   base = quick_prj4(fp);
+  clock_t end1 = clock();
+  printf("Time is %d ms\n",end1 - start1);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification quick Pass dataset : dataset2\n");
   else{
@@ -212,7 +236,10 @@ int main()
   }
 
   fp = fopen("./dataset/dataset3.txt","rt");
+  clock_t start2 = clock();
   base = quick_prj4(fp);
+  clock_t end2 = clock();
+  printf("Time is %d ms\n",end2 - start2);
   if(memcmp(ans,base,sizeof(int)*MAX_MAIN) == 0)
     printf("Verification quick Pass dataset : dataset3\n");
   else{

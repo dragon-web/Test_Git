@@ -78,55 +78,46 @@ int* insertion_prj4(FILE *fp_in)
   return dataset;
 }
 
-void AdjustDown(int *ar, int left, int right, int start)
+void max_heapify(int arr[], int start, int end)
 {
-  int n = right - left + 1;
-  int i = start;
-  int j = 2 * i + 1 + left; //+left
-  while (j < n)
+  int dad = start;
+  int son = dad * 2 + 1;
+  while (son <= end)  
   {
-    if (j + 1 < n && ar[j] < ar[j + 1])
-      j++;
-    if (ar[i] < ar[j])
-    {
-      Swap(&ar[i], &ar[j]);
-      i = j;
-      j = 2 * i + 1;
+    if (son + 1 <= end && arr[son] < arr[son + 1])
 
+      son++;
+    if (arr[dad] > arr[son]) 
+      return;
+    else 
+    {
+      Swap(&arr[dad], &arr[son]);
+      dad = son;
+      son = dad * 2 + 1;
     }
-    else
-      break;
   }
 }
-
 int *heap_prj4(FILE *fp_in) {
-  printf("heap");
+  printf("heap\n");
   int *dataset = (int*)malloc(sizeof(int)*SIZE);
   if (dataset == NULL) {
     printf("Mem alloc fail\n");
     return NULL;
-
   }
   fread(dataset, sizeof(int), SIZE, fp_in);
   int left = 0;
-  int right = SIZE - 1;
-  int n = right - left + 1;
-  int cur = n / 2 - 1 + left;
-  while (cur)
+  int right = SIZE;
+  int i;
+  for(i = SIZE / 2 - 1;i >= 0;--i)
   {
-    AdjustDown(dataset, left, right, cur);
-    cur--;
+    max_heapify(dataset,i,SIZE-1);
   }
-  int end = right;
-  while (end > right)
+  for(i = SIZE-1;i > 0;i--)
   {
-    Swap(&dataset[left], &dataset[right]);
-    end--;
-    AdjustDown(dataset, left, end, 0);
-
-  }
+    Swap(&dataset[0],&dataset[i]);
+    max_heapify(dataset,0,i-1);
+  } 
   return dataset;
-
 }
 
 
@@ -137,8 +128,6 @@ void mergeSort(int arr[], int start, int end) {
   mergeSort(arr, start, mid);
   mergeSort(arr, mid + 1, end);
   merge(arr, start, mid, end);
-
-
 }
 
 int *merge_prj4(FILE *fp_in) {
